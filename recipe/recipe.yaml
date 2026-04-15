@@ -11,7 +11,7 @@ source:
   md5: 906e04c7e6596cb12f88abb03bbe5760
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -25,6 +25,11 @@ requirements:
       then: qt6-scxml ${{ version }}.*
   host:
     - qt6-main ${{ version }}.*
+    - if: linux
+      then:
+        - libgl-devel
+        - libegl-devel
+        - libopengl-devel
   run:
     - qt6-main ${{ version }}.*
   run_exports:
@@ -35,6 +40,7 @@ tests:
       include:
         - qt6/QtScxml/qscxmlglobals.h
         - qt6/QtStateMachine/qstatemachine.h
+        - qt6/QtStateMachine/qeventtransition.h
       lib:
         - Qt6Scxml
         - Qt6StateMachine
