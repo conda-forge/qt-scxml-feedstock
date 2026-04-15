@@ -22,7 +22,7 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - if: build_platform != target_platform
-      then: qt6-main ${{ version }}.*
+      then: qt6-scxml ${{ version }}.*
   host:
     - qt6-main ${{ version }}.*
   run:
