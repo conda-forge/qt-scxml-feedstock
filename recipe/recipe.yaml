@@ -25,11 +25,6 @@ requirements:
       then: qt6-scxml ${{ version }}.*
   host:
     - qt6-main ${{ version }}.*
-    - if: linux
-      then:
-        - libgl-devel
-        - libegl-devel
-        - libopengl-devel
   run:
     - qt6-main ${{ version }}.*
   run_exports:
